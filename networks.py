@@ -63,8 +63,8 @@ class Discriminator(nn.Module):
             )
 
         self.pred_layers = nn.Sequential(
-            weight_norm(nn.Linear(192,11)),
-            # nn.Sigmoid(),
+            weight_norm(nn.Linear(192,1)),
+            nn.Sigmoid(),
             )
 
 
