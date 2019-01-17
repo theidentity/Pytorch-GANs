@@ -25,7 +25,7 @@ class GAN(object):
 
         self.name = 'dcgan'
         self.save_path = 'models/'+self.name+'/'
-        self.gen_img_dir = 'gen_imgs/'+self.name
+        self.gen_img_dir = 'gen_imgs/'+self.name+'/'
         self.device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
         self.lab_per_class = 20
@@ -88,9 +88,8 @@ class GAN(object):
 
                 if i % 100 == 0:
                     print('Epoch %d Step %d D_loss %.4f G_loss %.4f ' %(epoch, i, D_loss.item(), G_loss.item()))
-
-            name = str(epoch).zfill(4)+str(i).zfill(4) + '.png'
-            save_image(G(fixed_noise)[:25], self.gen_img_dir+name, nrow=5, normalize=True)
+                    name = str(epoch).zfill(4)+str(i).zfill(4) + '.png'
+                    save_image(G(fixed_noise)[:25], self.gen_img_dir+name, nrow=5, normalize=True)
 
             name = str(epoch).zfill(4)
             torch.save(G.state_dict(), self.save_path+name+'_gen.pth')
