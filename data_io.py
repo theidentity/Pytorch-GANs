@@ -20,8 +20,11 @@ class Data_IO():
             transforms.ToTensor(),
             transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
         ])
-        dataset = datasets.SVHN(
-            'data/svhn/', split=split, download=True, transform=transform)
+        # dataset = datasets.SVHN(
+            # 'data/svhn/', split=split, download=True, transform=transform)
+        train = split in ('train')
+        dataset = datasets.CIFAR10(
+            'data/cifar10/', train=train, download=True, transform=transform)
         return dataset
 
 
