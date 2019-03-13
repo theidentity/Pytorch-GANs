@@ -27,7 +27,8 @@ python dcgan.py --epochs=10 --gpu=0 --seed=42
 ### Results
 * The visualizations are in ```gen_imgs/dcgan/```
 * Current model run for 10 epochs. Train longer for more complex images
-* Improvment of epochs 0 to 5 to 10 :
+* Improvement of epochs 0 to 5 to 10 :
+*  
 ![epoch 0](https://raw.githubusercontent.com/theidentity/Pytorch-GANs/master/gen_imgs/dcgan/00000000.png)
 ![epoch 5](https://raw.githubusercontent.com/theidentity/Pytorch-GANs/master/gen_imgs/dcgan/00050000.png)
 ![epoch 10](https://raw.githubusercontent.com/theidentity/Pytorch-GANs/master/gen_imgs/dcgan/00100000.png)
